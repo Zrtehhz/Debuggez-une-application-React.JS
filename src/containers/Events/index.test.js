@@ -75,7 +75,7 @@ describe("When Events is created", () => {
         })
       );
       fireEvent(
-        (await screen.findAllByText("soirée entreprise"))[0],
+        (await screen.findAllByText("/Catégories/"))[0],
         new MouseEvent("click", {
           cancelable: true,
           bubbles: true,
