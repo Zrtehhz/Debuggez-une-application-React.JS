@@ -1,6 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen  } from "@testing-library/react";
 import Home from "./index";
 
+const successMessage = screen.queryByText("Message envoyé !");
+expect(successMessage).toBeInTheDocument();
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
     render(<Home />);
@@ -20,15 +22,14 @@ describe("When Form is created", () => {
           bubbles: true,
         })
       );
-      await waitFor(() => {
- screen.findByText("En cours");
- screen.findByText("Message envoyé !");
+  await screen.findByText("En cours");
+  await screen.findByText("Message envoyé !");
 
 
 });
 });
 });
-});
+
 
 
 describe("When a page is created", () => {
