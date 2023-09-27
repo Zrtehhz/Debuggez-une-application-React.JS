@@ -1,7 +1,7 @@
 import { fireEvent, render, screen  } from "@testing-library/react";
 import Home from "./index";
 
-const successMessage = screen.queryByText("Message envoyé !");
+const successMessage = screen.findByText("Message envoyé !");
 expect(successMessage).toBeInTheDocument();
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -23,7 +23,7 @@ describe("When Form is created", () => {
         })
       );
   await screen.findByText("En cours");
-  await screen.getByText("Message envoyé !");
+  await screen.findByText("Message envoyé !");
 
 
 });
